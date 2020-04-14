@@ -8,12 +8,15 @@ import sys
 
 
 def eating_cookies(n, cache=None):
-    if n <= 1:
-        return 1
-    elif n == 2:
-        return 2
+    if n < 0:
+        print(0)
+        return 0
 
-    return eating_cookies(n - 1) + eating_cookies(n - 2) + 3
+    if n < 2:
+        print(1)
+        return 1
+
+    return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
 
 
 if __name__ == "__main__":
