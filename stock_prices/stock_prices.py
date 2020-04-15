@@ -16,10 +16,10 @@ def find_max_profit(prices):
     for x in range(len(prices) - 1):
         if prices[x] <= current_min_price_so_far:
             current_min_price_so_far = prices[x]
-            for y in range(x + 1, len(prices) - 1):
-                profit = prices[y] - prices[x]
-                if profit > max_profit_so_far:
-                    max_profit_so_far = profit
+        for y in range(x + 1, len(prices) - 1):
+            profit = prices[y] - prices[x]
+            if profit > max_profit_so_far:
+                max_profit_so_far = profit
 
     return max_profit_so_far
 
