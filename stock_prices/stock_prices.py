@@ -11,13 +11,12 @@ def find_max_profit(prices):
     -If profit is larger than max profit so far, store it
     """
     current_min_price_so_far = prices[0]
-    max_profit_so_far = prices[1] - prices[0]
+    max_profit_so_far = max(prices[1:]) - prices[0]
 
     for x in range(len(prices) - 1):
         if prices[x] <= current_min_price_so_far:
             current_min_price_so_far = prices[x]
-        for y in range(x + 1, len(prices) - 1):
-            profit = prices[y] - prices[x]
+            profit = max(prices[x+1:]) - prices[x]
             if profit > max_profit_so_far:
                 max_profit_so_far = profit
 
